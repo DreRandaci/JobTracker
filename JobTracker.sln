@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobTracker", "JobTracker\JobTracker.csproj", "{45A10113-0695-45CB-AAFC-5AA75310AE18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45A10113-0695-45CB-AAFC-5AA75310AE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A10113-0695-45CB-AAFC-5AA75310AE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A10113-0695-45CB-AAFC-5AA75310AE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A10113-0695-45CB-AAFC-5AA75310AE18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BED187D5-55FC-4572-8EA1-A5804965E17B}
+	EndGlobalSection
+EndGlobal
