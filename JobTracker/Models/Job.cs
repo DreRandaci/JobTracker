@@ -19,21 +19,27 @@ namespace JobTracker.Models
         public int ApiId { get; set; }
 
         [Required]
+        [Display(Name = "Job Title")]
         public string JobTitle { get; set; }
 
         [Required]
+        [Display(Name = "Location")]
         public string JobLocation { get; set; }
 
         [Required]
+        [Display(Name ="Type")]
         public string Type { get; set; }
 
         [Required]
+        [Display(Name = "How To Apply")]
         public string HowToApply { get; set; }
 
         [Required]
+        [Display(Name = "Job Post")]
         public string JobUrl { get; set; }
 
         [Required]
+        [Display(Name = "Description")]
         public string Description { get; set; }
 
         [Required]
