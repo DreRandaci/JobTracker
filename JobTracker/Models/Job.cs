@@ -39,6 +39,8 @@ namespace JobTracker.Models
         [Required]
         public bool Applied { get; set; }
 
+        public virtual ICollection<JobContact> JobContacts { get; set; }
+
         public Job()
         {
             this.Applied = false;

@@ -24,5 +24,9 @@ namespace JobTracker.Models
         [Required]
         public string CompanyUrl { get; set; }
 
+        [Required]
+        public ApplicationUser User { get; set; }
+
+        public virtual ICollection<Job> Jobs { get; set; }
     }
 }
