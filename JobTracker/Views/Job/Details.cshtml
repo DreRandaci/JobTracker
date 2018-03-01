@@ -1,0 +1,72 @@
+﻿@model JobTracker.Models.Job
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Job</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApiId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApiId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JobLocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JobLocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HowToApply)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HowToApply)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JobUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JobUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Applied)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Applied)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Company.CompanyLogoUrl)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.JobId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
