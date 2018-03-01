@@ -10,7 +10,7 @@ namespace JobTracker.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Search()
         {
             return View();
         }
