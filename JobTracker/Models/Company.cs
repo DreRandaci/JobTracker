@@ -12,6 +12,7 @@ namespace JobTracker.Models
         public int CompanyId { get; set; }
 
         [Required]
+        [Display(Name = "Company")]
         public string CompanyName { get; set; }
 
         [Required]

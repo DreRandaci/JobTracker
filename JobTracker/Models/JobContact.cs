@@ -9,17 +9,16 @@ namespace JobTracker.Models
     public class JobContact
     {
         [Key]
-        public int ContactId { get; set; }
+        public int JobContactId { get; set; }
+
+        [Required]
+        public int JobId { get; set; }
+        public Job job { get; set; }
 
         [Required]
         public ApplicationUser User { get; set; }
 
         [Required]
-        public int CompanyId { get; set; }
-        public Company Company { get; set; }
-
-        [Required]
-        public int JobId { get; set; }
-        public Job job { get; set; }
+        public Contact Contact { get; set; }
     }
 }
