@@ -253,7 +253,7 @@ namespace JobTracker.Controllers
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
-            return RedirectToAction(nameof(HomeController.Search), "Search");
+            return RedirectToAction(nameof(HomeController.Index), "Index");
         }
 
         [HttpPost]
@@ -341,7 +341,7 @@ namespace JobTracker.Controllers
         {
             if (userId == null || code == null)
             {
-                return RedirectToAction(nameof(HomeController.Search), "Search");
+                return RedirectToAction(nameof(HomeController.Index), "Index");
             }
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
@@ -461,7 +461,7 @@ namespace JobTracker.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(HomeController.Search), "Search");
+                return RedirectToAction(nameof(HomeController.Index), "Index");
             }
         }
 

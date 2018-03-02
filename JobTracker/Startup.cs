@@ -61,7 +61,7 @@ namespace JobTracker
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Search}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

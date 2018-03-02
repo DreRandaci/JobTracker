@@ -13,13 +13,7 @@ namespace JobTracker.Models
 
         [Required]
         [Display(Name = "Company")]
-        public string CompanyName { get; set; }
-
-        [Required]
-        public int ApiId { get; set; }
-
-        [Required]
-        public string CompanyLogoUrl { get; set; }
+        public string CompanyName { get; set; }            
 
         [Required]
         public string CompanyUrl { get; set; }

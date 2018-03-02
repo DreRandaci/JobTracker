@@ -84,11 +84,6 @@ namespace JobTracker.Data.Migrations
                     b.Property<int>("CompanyId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ApiId");
-
-                    b.Property<string>("CompanyLogoUrl")
-                        .IsRequired();
-
                     b.Property<string>("CompanyName")
                         .IsRequired();
 
@@ -131,21 +126,11 @@ namespace JobTracker.Data.Migrations
                     b.Property<int>("JobId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ApiId");
-
                     b.Property<string>("ApplicationUserId");
 
                     b.Property<string>("ApplicationUserId1");
 
-                    b.Property<bool>("Applied");
-
                     b.Property<int>("CompanyId");
-
-                    b.Property<string>("Description")
-                        .IsRequired();
-
-                    b.Property<string>("HowToApply")
-                        .IsRequired();
 
                     b.Property<string>("JobLocation")
                         .IsRequired();

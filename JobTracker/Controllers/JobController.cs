@@ -48,7 +48,7 @@ namespace JobTracker.Controllers
         // GET: Job/Create
         public IActionResult Create()
         {
-            ViewData["CompanyId"] = new SelectList(_context.Company, "CompanyId", "CompanyLogoUrl");
+            ViewData["CompanyId"] = new SelectList(_context.Company, "CompanyId", "CompanyName");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace JobTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("JobId,CompanyId,ApiId,JobTitle,JobLocation,Type,HowToApply,JobUrl,Description,Applied")] Job job)
+        public async Task<IActionResult> Create([Bind("JobId,CompanyId,JobTitle,JobLocation,Type,JobUrl")] Job job)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace JobTracker.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CompanyId"] = new SelectList(_context.Company, "CompanyId", "CompanyLogoUrl", job.CompanyId);
+            ViewData["CompanyId"] = new SelectList(_context.Company, "CompanyId", "CompanyName", job.CompanyId);
             return View(job);
         }
 
@@ -82,7 +82,7 @@ namespace JobTracker.Controllers
             {
                 return NotFound();
             }
-            ViewData["CompanyId"] = new SelectList(_context.Company, "CompanyId", "CompanyLogoUrl", job.CompanyId);
+            ViewData["CompanyId"] = new SelectList(_context.Company, "CompanyId", "CompanyName", job.CompanyId);
             return View(job);
         }
 
@@ -91,7 +91,7 @@ namespace JobTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("JobId,CompanyId,ApiId,JobTitle,JobLocation,Type,HowToApply,JobUrl,Description,Applied")] Job job)
+        public async Task<IActionResult> Edit(int id, [Bind("JobId,CompanyId,JobTitle,JobLocation,Type,JobUrl")] Job job)
         {
             if (id != job.JobId)
             {
@@ -118,7 +118,7 @@ namespace JobTracker.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CompanyId"] = new SelectList(_context.Company, "CompanyId", "CompanyLogoUrl", job.CompanyId);
+            ViewData["CompanyId"] = new SelectList(_context.Company, "CompanyId", "CompanyName", job.CompanyId);
             return View(job);
         }
 
