@@ -30,7 +30,9 @@ namespace JobTracker.Models
 
         [Required]
         [Display(Name = "Link to Job Post")]
-        public string JobUrl { get; set; }              
+        public string JobUrl { get; set; }
+        
+        public ApplicationUser User { get; set; }
 
         public virtual ICollection<JobContact> JobContacts { get; set; }        
     }

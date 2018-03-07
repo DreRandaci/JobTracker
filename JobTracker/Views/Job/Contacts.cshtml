@@ -1,0 +1,34 @@
+﻿@model JobTracker.Models.JobContactViewModels.JobContactViewModel
+
+@{
+    ViewData["Title"] = "Contacts";
+}
+
+<h2>Add Contacts</h2>
+
+<h4>JobContactViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddContact">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <select>
+                    @foreach (var item in Model.Jobs)
+                     {
+                        <option>@item.JobTitle at @item.Company.CompanyName</option>
+                     }
+                </select>
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

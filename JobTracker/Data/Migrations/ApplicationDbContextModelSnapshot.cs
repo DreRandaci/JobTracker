@@ -126,10 +126,6 @@ namespace JobTracker.Data.Migrations
                     b.Property<int>("JobId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ApplicationUserId");
-
-                    b.Property<string>("ApplicationUserId1");
-
                     b.Property<int>("CompanyId");
 
                     b.Property<string>("JobLocation")
@@ -144,13 +140,13 @@ namespace JobTracker.Data.Migrations
                     b.Property<string>("Type")
                         .IsRequired();
 
+                    b.Property<string>("UserId");
+
                     b.HasKey("JobId");
 
-                    b.HasIndex("ApplicationUserId");
-
-                    b.HasIndex("ApplicationUserId1");
-
                     b.HasIndex("CompanyId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Job");
                 });
@@ -296,18 +292,14 @@ namespace JobTracker.Data.Migrations
 
             modelBuilder.Entity("JobTracker.Models.Job", b =>
                 {
-                    b.HasOne("JobTracker.Models.ApplicationUser")
-                        .WithMany("AppliedJobs")
-                        .HasForeignKey("ApplicationUserId");
-
-                    b.HasOne("JobTracker.Models.ApplicationUser")
-                        .WithMany("SavedJobs")
-                        .HasForeignKey("ApplicationUserId1");
-
                     b.HasOne("JobTracker.Models.Company", "Company")
                         .WithMany("Jobs")
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("JobTracker.Models.ApplicationUser", "User")
+                        .WithMany("SavedJobs")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("JobTracker.Models.JobContact", b =>

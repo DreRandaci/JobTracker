@@ -22,8 +22,6 @@ namespace JobTracker.Models
 
         public virtual ICollection<Job> SavedJobs { get; set; }
 
-        public virtual ICollection<Job> AppliedJobs { get; set; }
-
         public virtual ICollection<JobContact> Contacts { get; set; }
     }
 }

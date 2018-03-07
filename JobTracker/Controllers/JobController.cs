@@ -7,17 +7,24 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using JobTracker.Data;
 using JobTracker.Models;
+using Microsoft.AspNetCore.Identity;
+using JobTracker.Models.JobContactViewModels;
 
 namespace JobTracker.Controllers
 {
     public class JobController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public JobController(ApplicationDbContext context)
+        public JobController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
+    
+        // This task retrieves the currently authenticated user
+        private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
         // GET: Job
         public async Task<IActionResult> Index()
@@ -43,6 +50,26 @@ namespace JobTracker.Controllers
             }
 
             return View(job);
+        }
+
+
+        public async Task<IActionResult> Contacts()
+        {
+            var user = await GetCurrentUserAsync();
+
+            //TODO: jobs are returning empty. fix it
+            var jobs = await _context
+                                .Job
+                                .Include("Company")
+                                .Where(j => j.User == user)
+                                .ToListAsync();
+
+            var model = new JobContactViewModel
+            {
+                Jobs = jobs
+            };
+            
+            return View(model);
         }
 
         // GET: Job/Create
